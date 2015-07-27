@@ -1,0 +1,16 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    block content
+    
+    script(type='text/javascript', src='/javascripts/bower_components/angular/angular.js')
+    script(type='text/javascript', src='/javascripts/bower_components/rxjs/dist/rx.lite.js')
+    script(type='text/javascript', src='/javascripts/bower_components/rxjs/dist/rx.lite.extras.js')
+    script(type='text/javascript', src='/javascripts/bower_components/angular-rx/dist/rx.angular.js')
+    
+    script(type='text/javascript', src='/javascripts/angular-app.js')
+    
+    block pagejs

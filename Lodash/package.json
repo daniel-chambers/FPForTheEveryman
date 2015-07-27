@@ -1,0 +1,13 @@
+{
+  "name": "FunctionalProgrammingForTheEveryman",
+  "version": "1.0.0",
+  "dependencies": {
+    "lodash": "^3.10.0"
+  },
+  "devDependencies": {
+    "tsd": "^0.6.3"
+  },
+  "scripts": {
+    "postinstall": "tsd install"
+  }
+}

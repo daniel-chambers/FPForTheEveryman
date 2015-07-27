@@ -1,0 +1,24 @@
+extends layout
+
+block content
+  h1 User Search - Good Example using RxJS 
+  div(ng-app="rxjsDemo")
+    div(ng-controller="userSearchGoodCtrl")
+      p 
+        | "slow" is a slow search, "slow fast" is faster. 
+        | Now that we're using RxJS and flatMapLatest, the 
+        | last search request will always be displayed and
+        | earlier results discarded.
+      
+      div
+        label Search: 
+        input(ng-change="search()", ng-model="searchTerms")
+        p Requests sent: {{requestCount}}
+        p Displaying response number: {{responseIndex}}
+        p: strong Results:
+        span(ng-if="loading") Loading...
+        ul
+          li(ng-repeat="result in searchResults") {{result.name}}
+
+block pagejs
+  script(type='text/javascript', src='/javascripts/userSearchGoodCtrl.js')

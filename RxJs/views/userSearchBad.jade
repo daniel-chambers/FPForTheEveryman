@@ -1,0 +1,19 @@
+extends layout
+
+block content
+  h1 User Search - Bad Example 
+  div(ng-app="rxjsDemo")
+    div(ng-controller="userSearchBadCtrl")
+      p "slow" is a slow search, "slow fast" is faster. The slow search will overwrite the fast search results!
+      div
+        label Search: 
+        input(ng-change="search()", ng-model="searchTerms")
+        p Requests sent: {{requestCount}}
+        p Displaying response number: {{responseIndex}}
+        p: strong Results:
+        span(ng-if="loading") Loading...
+        ul
+          li(ng-repeat="result in searchResults") {{result.name}}
+
+block pagejs
+  script(type='text/javascript', src='/javascripts/userSearchBadCtrl.js')
