@@ -4,6 +4,7 @@ void Main()
 {
     Func<string, Name> parseName = ImperativeParseName;
 
+    parseName("").Dump();
     parseName("Carlos").Dump();
     parseName("Carlos Norris").Dump();
     parseName("Carlos Ray Norris").Dump();

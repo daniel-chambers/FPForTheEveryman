@@ -3,8 +3,8 @@ var _ = require("lodash");
 function getDuplicatedEmails(users)
 {
 	return _.chain(users)
-	    .countBy(user => (user.email || "").toLowerCase().trim())
-	    .pick((count, email) => count > 1 && email != "")
+	    .countBy(user => user.email.toLowerCase().trim())
+	    .pick((count, email) => count > 1)
 	    .map((count, email) => email)
 	    .value();
 }
