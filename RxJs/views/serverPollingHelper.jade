@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  h1 Server Polling using RxJS - Helper 
+  div(ng-app="rxjsDemo")
+    div(ng-controller="serverPollingHelperCtrl")
+      p Use this page to set the state on the server
+      button(ng-click="setCompletedState()") Set Completed
+      button(ng-click="resetState()") Reset
+      
+
+block pagejs
+  script(type='text/javascript', src='/javascripts/serverPollingHelperCtrl.js')

@@ -8,7 +8,9 @@ angular.module('rxjsDemo')
     $scope.requestCount = 0;
     $scope.responseIndex = null;
     
-    $scope.$createObservableFunction('search')
+    var searchObservable = $scope.$createObservableFunction('search');
+    
+    searchObservable
       .flatMapLatest(function() { 
         $scope.loading = true;
       

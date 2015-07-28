@@ -1,0 +1,21 @@
+extends layout
+
+block content
+  h1 Server Polling using RxJS
+  div(ng-app="rxjsDemo")
+    div(ng-controller="serverPollingCtrl")
+      p 
+        | This page polls the server to display a state.
+        | It will poll: 
+      ul
+        li every 1 second 10 times, then
+        li every 4 seconds 10 times, then 
+        li every 10 seconds until the state is Completed.
+        
+      p <strong>State:</strong> {{state}}
+      p <strong>Last Updated:</strong> {{serverTime}}
+      p <strong>Polling?</strong> {{!refreshSubscription.isStopped}}
+      
+
+block pagejs
+  script(type='text/javascript', src='/javascripts/serverPollingCtrl.js')
