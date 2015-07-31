@@ -8,14 +8,20 @@ void Main()
     if (application.IdentityDetails != null && 
         application.IdentityDetails.Address != null)
         suburb = application.IdentityDetails.Address.Suburb;
-        
+
+
+#region FP version
     var suburb2 = application.IdentityDetails
         .Maybe(d => d.Address)
         .Maybe(a => a.Suburb) 
         ?? "Unknown";
+#endregion
+
       
+#region C# 6
     // C# 6
     // var suburb2 = application.IdentityDetails?.Address?.Suburb ?? "Unknown";
+#endregion
 }
 
 public static class FunctionalExtensions
