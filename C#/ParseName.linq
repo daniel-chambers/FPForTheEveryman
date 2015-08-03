@@ -59,9 +59,9 @@ public Name FunctionalParseName(string name)
                 .Aggregate("", (a, b) => string.Format("{0} {1}", a, b))
                 .Trim() //A bit icky
             : null,
-        Surname = names.Length == 1
-            ? null
-            : names.Last(),
+        Surname = names.Length > 1
+            ? names.Last()
+            : null,
     };
 }
 
@@ -76,9 +76,9 @@ public Name BetterFunctionalParseName(string name)
                 .Skip(1)
                 .Take(names.Length - 2))
             : null,
-        Surname = names.Length == 1
-            ? null
-            : names.Last(),
+        Surname = names.Length > 1
+            ? names.Last()
+            : null,
     };
 }
 
@@ -94,9 +94,9 @@ public Name BetterBetterFunctionalParseName(string name)
                 .Take(names.Length - 2)
                 .StringJoin(" ") //Much better
             : null,
-        Surname = names.Length == 1
-            ? null
-            : names.Last(),
+        Surname = names.Length > 1
+            ? names.Last()
+            : null,
     };
 }
 
