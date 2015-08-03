@@ -11,16 +11,19 @@ void Main()
 
 
 #region FP version
+
     var suburb2 = application.IdentityDetails
         .Maybe(d => d.Address)
         .Maybe(a => a.Suburb) 
         ?? "Unknown";
+        
 #endregion
 
       
 #region C# 6
-    // C# 6
+
     // var suburb2 = application.IdentityDetails?.Address?.Suburb ?? "Unknown";
+    
 #endregion
 }
 

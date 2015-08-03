@@ -2,19 +2,28 @@
 
 void Main()
 {
-    var stateChanges = new List<StateChange>
+    var application = new Application 
     {
-        new StateChange { State = State.State1, StartDate = new DateTime(2015, 7, 1) },
-        new StateChange { State = State.State2, StartDate = new DateTime(2015, 7, 2) },
-        new StateChange { State = State.State3, StartDate = new DateTime(2015, 7, 5) },
+        StateChanges = new List<StateChange>
+        {
+            new StateChange { State = State.State1, StartDate = new DateTime(2015, 7, 1) },
+            new StateChange { State = State.State2, StartDate = new DateTime(2015, 7, 2) },
+            new StateChange { State = State.State3, StartDate = new DateTime(2015, 7, 5) },
+        }
     };
 
-    ImperativeToViewModel(stateChanges).Dump();
+    ImperativeToViewModel(application.StateChanges).Dump();
 }
- 
+
 public enum State
 {
     State1, State2, State3,
+}
+
+public class Application 
+{
+    public State State { get; set; }
+    public List<StateChange> StateChanges { get; set; }
 }
 
 public class StateChange
@@ -31,10 +40,10 @@ public class StateChangeViewModel
 }
 
 // Time Difference Between States
-// ------------------------------
-// State1 Duration = State2 - State1
-// State2 Duration = State3 - State2
-// State3 Duration = Now    - State3
+// -----------------------------------------------------
+// State1 Duration = State2.StartDate - State1.StartDate
+// State2 Duration = State3.StartDate - State2.StartDate
+// State3 Duration = Now              - State3.StartDate
 
 public IList<StateChangeViewModel> ImperativeToViewModel(IList<StateChange> stateChanges)
 {
