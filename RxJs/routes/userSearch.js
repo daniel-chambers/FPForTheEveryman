@@ -34,7 +34,9 @@ router
     }
     
     setTimeout(function() { 
-      res.json(200, { i: req.query.i, results: results });
+      res
+        .set("Cache-Control", "private, max-age=0, no-cache")
+        .json(200, { i: req.query.i, results: results });
     }, timeout);
   });
 

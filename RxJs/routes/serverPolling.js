@@ -13,7 +13,9 @@ router
   })
   .get('/api', function (req, res, next) {
     var date = new Date();
-    res.json(200, { serverTime: date, state: state });
+    res
+      .set("Cache-Control", "private, max-age=0, no-cache")
+      .json(200, { serverTime: date, state: state });
   })
   .post("/api", function(req, res, next) {
     state = req.query.state;
