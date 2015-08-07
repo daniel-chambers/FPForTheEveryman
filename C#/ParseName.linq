@@ -82,7 +82,7 @@ public Name BetterFunctionalParseName(string name)
     };
 }
 
-public Name BetterBetterFunctionalParseName(string name)
+public Name BestFunctionalParseName(string name)
 {
     var names = name.Split(new[] {' '}, StringSplitOptions.RemoveEmptyEntries);
     return new Name 
