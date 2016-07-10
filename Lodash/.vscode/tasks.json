@@ -27,6 +27,10 @@
 			"args": [ "splitNames.js" ]
 		},
 		{
+			"taskName": "splitNames-v2",
+			"args": [ "splitNames-v2.js" ]
+		},
+		{
 			"taskName": "duplicateEmails",
 			"args": [ "duplicateEmails.js" ]
 		}

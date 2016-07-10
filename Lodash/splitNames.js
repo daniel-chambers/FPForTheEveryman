@@ -19,6 +19,8 @@ function splitFullName(fullName) {
     }
 }
 
+console.log("Split Names v1")
+console.log("--------------")
 console.log(splitFullName(""));
 console.log(splitFullName("Carlos"));
 console.log(splitFullName("Carlos Norris"));

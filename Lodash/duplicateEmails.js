@@ -1,12 +1,12 @@
-var _ = require("lodash");
+var _ = require("lodash/fp");
 
 function getDuplicatedEmails(users)
 {
-	return _.chain(users)
-	    .countBy(user => user.email.toLowerCase().trim())
-	    .pick((count, email) => count > 1)
-	    .map((count, email) => email)
-	    .value();
+	return _.flow(
+	    _.countBy(user => user.email.toLowerCase().trim()),
+	    _.pickBy((count, email) => count > 1),
+	    _.keys
+		)(users);
 }
 
 var users = [
