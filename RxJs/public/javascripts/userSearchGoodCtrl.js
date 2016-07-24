@@ -23,10 +23,11 @@ angular.module('rxjsDemo')
         
         return $http.get("/userSearch/api", { params: params });        
       })
-      .subscribe(function(response) {
+      .safeApply($scope, function(response) {
         $scope.responseIndex = response.data.i;
         $scope.searchResults = response.data.results;
-        $scope.loading = false; 
-      });
+        $scope.loading = false;
+      })
+      .subscribe();
     
   }]);

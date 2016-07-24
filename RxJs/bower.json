@@ -1,10 +1,9 @@
 {
-  "name": "RxJsDemo",
+  "name": "rx-js-demo",
   "version": "0.0.0",
   "private": true,
   "dependencies": {
-    "rxjs": "~2.5.2",
-    "angular": "~1.4.3",
-    "angular-rx": "~0.0.14"
+    "angular": "~1.5.8",
+    "angular-rx": "~1.1.3"
   }
 }

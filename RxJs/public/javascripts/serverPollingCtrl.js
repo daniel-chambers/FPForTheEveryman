@@ -9,7 +9,7 @@ angular.module('rxjsDemo')
     $scope.timeSinceLastRequest = 0;
         
     var pollingObservable = 
-      rx.Observable.returnValue(null)
+      rx.Observable.return(null)
         .concat(rx.Observable.interval(1000).take(10))
         .concat(rx.Observable.interval(4000).take(10))
         .concat(rx.Observable.interval(10000));
@@ -19,13 +19,14 @@ angular.module('rxjsDemo')
         $scope.requestCount++;
         return $http.get("/serverPolling/api");
       })
-      .subscribe(function(response) {
+      .safeApply($scope, function(response) {
         $scope.serverTime = response.data.serverTime;
         $scope.state = response.data.state;
         
         if ($scope.state === "Completed")
           $scope.refreshSubscription.dispose();
-      });
+      })
+      .subscribe();
       
     $scope.$on("$destroy", function() { $scope.refreshSubscription.dispose(); })
     
