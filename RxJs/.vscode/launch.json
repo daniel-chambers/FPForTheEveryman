@@ -4,18 +4,19 @@
 	// ONLY "node" and "mono" are supported, change "type" to switch.
 	"configurations": [
 		{
+			"request": "launch",
 			// Name of configuration; appears in the launch configuration drop down menu.
 			"name": "Launch ./bin/www",
 			// Type of configuration. Possible values: "node", "mono".
 			"type": "node",
 			// Workspace relative or absolute path to the program.
-			"program": "./bin/www",
+			"program": "${workspaceRoot}/bin/www",
 			// Automatically stop program after launch.
 			"stopOnEntry": false,
 			// Command line arguments passed to the program.
 			"args": [],
 			// Workspace relative or absolute path to the working directory of the program being debugged. Default is the current workspace.
-			"cwd": ".",
+			"cwd": "${workspaceRoot}",
 			// Workspace relative or absolute path to the runtime executable to be used. Default is the runtime executable on the PATH.
 			"runtimeExecutable": null,
 			// Optional arguments passed to the runtime executable.
@@ -28,6 +29,7 @@
 			"outDir": null
 		}, 
 		{
+			"request": "attach",
 			"name": "Attach",
 			"type": "node",
 			// TCP/IP address. Default is "localhost".
