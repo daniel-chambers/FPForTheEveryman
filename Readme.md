@@ -7,6 +7,8 @@ This repository contains the presentation materials and sample code for the Func
 
 > Once you get a taste of functional programming, you won’t want to go back. :)
 
+Video: [NDC Sydney 2016](https://www.youtube.com/watch?v=V69C7HDTB3o)
+
 To get the sample code up and running you will need:
 
 * [LINQPad][1] - for the C# examples
